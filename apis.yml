@@ -1,18 +1,64 @@
 aid: lumin-digital
 name: Lumin Digital
-description: 'Lumin Digital is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Lumin Digital is a cloud-native digital banking platform for credit unions and community banks,
+  founded in 2016 by Jeff Chambers and headquartered in San Ramon, California. The platform is built
+  on a single-tenant, microservices architecture and sits on top of an institution's existing core
+  banking processor, delivering retail banking, commercial banking, digital account opening, user
+  engagement, risk management, digital marketing and data analytics as modules. Its extensibility
+  layer is API- and SDK-based: Lumin publishes a client SDK and a partner API programme that connects
+  the platform to a stated 200+ third-party fintech solutions, and a developer portal used by
+  financial institutions and integration partners to move data into and out of digital banking. The
+  API reference, SDK downloads and developer portal are reachable only through the authenticated
+  client portal at clients.lumindigital.com, so no machine-readable contract is published publicly.
 url: https://raw.githubusercontent.com/api-evangelist/lumin-digital/refs/heads/main/apis.yml
+image: https://lumindigital.com/wp-content/uploads/2024/07/logo-lumin-rev.svg
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-25'
 modified: '2026-08-25'
 tags:
-- Company
-apis: []
+- Digital Banking
+- Banking
+- Credit Unions
+- Financial Services
+- Fintech
+- Core Banking
+- Digital Account Opening
+- Payments
+- Commercial Banking
+- SaaS
+apis:
+- aid: lumin-digital-platform
+  name: Lumin Digital Platform APIs
+  description: >-
+    Lumin Digital's platform API and SDK surface, used by financial institutions and by ecosystem
+    partners to integrate third-party products into the digital banking experience and to move data
+    between the platform, the core processor and third parties. Marketed publicly on the
+    extensibility and ecosystem pages; the reference, spec and SDK artifacts are distributed through
+    the authenticated client portal, and the platform is deployed single-tenant per institution so
+    no single public base URL is published.
+  humanURL: https://lumindigital.com/extensibility/
+  x-base-url-finding: >-
+    repair-api-bases.py verdict `missing` (2026-08-25). Left missing deliberately rather than guessed.
+    Lumin Digital documents no API base URL anywhere public — the platform is deployed single-tenant
+    per financial institution, so each client's host differs, and the reference that would name it is
+    behind https://clients.lumindigital.com/login. api.demo.lumindigital.com resolves and terminates
+    TLS but is the demo tenant's app host, answers 404 at root and on every spec path, and is not
+    documented as an API base; recording it as baseURL would assert a contract that was never
+    published.
+  tags:
+  - Digital Banking
+  - Extensibility
+  - Partner Integration
+  properties:
+  - type: Overview
+    url: https://lumindigital.com/extensibility/
+  - type: Ecosystem
+    url: https://lumindigital.com/ecosystem/
+  - type: SDKLicense
+    url: https://lumindigital.com/software-development-kit-license-agreement/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +66,79 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://forgeglobal.com/lumin-digital_stock/
+  url: https://lumindigital.com/
+- type: Support
+  url: https://clients.lumindigital.com/
+- type: Blog
+  url: https://lumindigital.com/insights/
+- type: BlogRSS
+  url: https://lumindigital.com/feed/
+- type: News
+  url: https://lumindigital.com/news/
+- type: GitHubOrganization
+  url: https://github.com/lumindigital
+- type: TermsOfService
+  url: https://lumindigital.com/terms-of-use/
+- type: PrivacyPolicy
+  url: https://lumindigital.com/privacy-policy/
+- type: AcceptableUsePolicy
+  url: https://lumindigital.com/aup/
+- type: Accessibility
+  url: https://lumindigital.com/accessibility/
+- type: Login
+  url: https://clients.lumindigital.com/login
+- type: Security
+  url: https://lumindigital.com/security/
+- type: TrustCenter
+  url: https://trust.lumindigital.com/
+- type: Compliance
+  url: conformance/lumin-digital-conformance.yml
+- type: Conformance
+  url: conformance/lumin-digital-conformance.yml
+- type: SecurityTxt
+  url: well-known/lumin-digital-security.txt
+- type: WellKnown
+  url: well-known/lumin-digital-well-known.yml
+- type: VulnerabilityDisclosure
+  url: security/lumin-digital-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/lumin-digital-domain-security.yml
+- type: Packages
+  url: packages/lumin-digital-packages.yml
+- type: CLI
+  url: cli/lumin-digital-cli.yml
+- type: Lifecycle
+  url: lifecycle/lumin-digital-lifecycle.yml
+- type: Conventions
+  url: conventions/lumin-digital-conventions.yml
+- type: Plans
+  url: plans/lumin-digital-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/lumin-digital-rate-limits.yml
+- type: Components
+  url: components/lumin-digital-components.yml
+- type: LLMsTxt
+  url: llms/lumin-digital-llms.txt
+x-enrichment:
+  date: '2026-08-25'
+  status: minimal
+  artifacts_added: 15
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: >-
+    Lumin Digital markets platform APIs, an SDK and a developer portal on lumindigital.com, but every
+    developer path resolves into the client portal at clients.lumindigital.com, which 302s to
+    /login?ReturnUrl= for /docs and for every other path including /.well-known/*, and the 31-page
+    public sitemap contains no developer, API-reference or spec page at all.
+  evidence:
+  - url: https://clients.lumindigital.com/docs
+    status: 302
+  - url: https://lumindigital.com/page-sitemap.xml
+    status: 200
+  - url: https://api.demo.lumindigital.com/openapi.json
+    status: 404
+  - url: https://lumindigital.com/.well-known/security.txt
+    status: 200
+  checked: '2026-08-25'

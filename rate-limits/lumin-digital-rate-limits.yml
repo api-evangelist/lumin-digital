@@ -1,0 +1,23 @@
+generated: '2026-08-25'
+method: searched
+source: https://lumindigital.com/extensibility/
+note: >-
+  No rate limits are documented anywhere publicly. Lumin Digital publishes no API reference, so
+  neither the documented limits nor the runtime response headers (X-RateLimit-*, RateLimit-*,
+  Retry-After) nor the status code on exhaustion could be established. An honest zero: this records
+  that the check was performed and found nothing, not that the API is unlimited. Limits are expected
+  to exist and to be communicated through the authenticated client portal and the partner
+  integration agreement.
+limit_count: 0
+documented: false
+headers_documented: false
+headers: []
+exhaustion_status: null
+limits: []
+evidence:
+- url: https://lumindigital.com/extensibility/
+  status: 200
+  finding: describes APIs and SDK; states no limits, quotas or throttling behaviour
+- url: https://clients.lumindigital.com/docs
+  status: 302
+  finding: redirects to /login?ReturnUrl=%2fdocs — reference is behind the client portal

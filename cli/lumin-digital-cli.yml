@@ -1,0 +1,25 @@
+generated: '2026-08-25'
+method: searched
+source: https://github.com/lumindigital/juno
+note: >-
+  Lumin Digital ships one publicly installable first-party CLI, `juno`. It is developer tooling for
+  Argo Workflows authored inside the company and open-sourced under MIT — it does NOT wrap or call
+  the Lumin Digital digital banking API, and there is no publicly installable CLI for that API. This
+  distinction is recorded deliberately so the artifact is not read as API ergonomics it does not
+  provide.
+clis:
+- name: juno
+  binary: juno
+  version: 2.7.0
+  published: '2026-08-20'
+  license: MIT
+  repository: https://github.com/lumindigital/juno
+  package: https://www.npmjs.com/package/@lumindigital/juno
+  framework: oclif
+  wraps_provider_api: false
+  purpose: Generate Argo Workflows manifests from TypeScript with types and validation.
+  install:
+  - npm install -g @lumindigital/juno
+  docs:
+  - https://github.com/lumindigital/juno/blob/main/docs/index.md
+  - https://github.com/lumindigital/juno-workflow-example

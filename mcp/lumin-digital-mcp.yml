@@ -1,0 +1,33 @@
+generated: '2026-08-25'
+method: probed
+source: live POST tools/list probes + registry and web search for an official Lumin Digital MCP server
+note: >-
+  NEGATIVE RESULT, recorded so the probe is not repeated blindly. Lumin Digital ships no MCP server —
+  neither a hosted remote endpoint nor a local stdio package. No candidate tool list could be derived
+  either, because the company publishes no OpenAPI, GraphQL SDL or public API reference to derive
+  operations from. No MCPServer pointer is emitted in apis.yml. No endpoint URL is guessed: a
+  fabricated MCP path that happened to answer 200 would read as a verified agent surface.
+status: none
+tools: []
+tool_count: 0
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+probes:
+- url: https://lumindigital.com/mcp
+  method: POST tools/list
+  status: 404
+- url: https://api.demo.lumindigital.com/mcp
+  method: POST tools/list
+  status: 404
+- url: https://mcp.lumindigital.com/
+  result: NXDOMAIN
+- registry: npm
+  probed:
+  - "@lumindigital/mcp"
+  - lumin-digital-mcp
+  result: not found

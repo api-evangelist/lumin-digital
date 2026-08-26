@@ -1,0 +1,27 @@
+generated: '2026-08-25'
+method: probed
+source: https://trust.lumindigital.com/
+note: >-
+  Lumin Digital operates a real, provider-served trust centre: trust.lumindigital.com is a CNAME to
+  lumindigital.trustshare.com (TrustShare, hosted on Render) and returns HTTP 200. Its contents are
+  NOT readable without executing JavaScript — the served HTML is a 29,173-byte Create React App shell
+  whose only asset is /static/index-BvjbS4dZ.js, and every path under the host returns that same
+  shell byte-for-byte. No certification names, audit reports, subprocessor list or document-request
+  flow could be enumerated from the served markup, so none are recorded here. The certifications
+  Lumin Digital does state publicly are captured in conformance/lumin-digital-conformance.yml from
+  the server-rendered https://lumindigital.com/security/ page.
+trust_center:
+  url: https://trust.lumindigital.com/
+  status: 200
+  vendor: TrustShare
+  cname: lumindigital.trustshare.com
+  machine_readable: false
+  rendering: client-side SPA (Create React App shell)
+  certifications_enumerable: false
+  access: >-
+    The security page describes the GRC platform as "client-accessible", so the audit artifacts
+    behind it are expected to require an account or an NDA request.
+certifications_named_elsewhere:
+- SOC 2 Trust Services Criteria
+- PCI Data Security Standard
+- GLBA-aligned security frameworks

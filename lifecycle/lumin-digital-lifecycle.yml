@@ -1,0 +1,54 @@
+generated: '2026-08-25'
+method: searched
+source: https://lumindigital.com/technology/
+note: >-
+  Lumin Digital publishes availability and release-cadence CLAIMS on its marketing pages but no
+  operational lifecycle surface a machine or an integrator can consult. There is no public status
+  page, no public changelog or release notes, no published versioning scheme, no deprecation policy
+  and no Sunset/Deprecation header documentation. Because the platform is deployed single-tenant per
+  financial institution, incident and release communication runs through the authenticated client
+  portal (clients.lumindigital.com) rather than a public page. Every absence below was probed, not
+  assumed.
+availability:
+  claim: 99.999% uptime
+  source: https://lumindigital.com/technology/
+  quote: >-
+    99.999% Uptime — Build, grow, and scale with weekly feature updates and zero downtime
+  sla_published: false
+  note: A marketing claim on the technology page, not a contractual SLA document.
+release_cadence:
+  claim: weekly feature updates without disruption
+  source: https://lumindigital.com/technology/
+  corroboration: >-
+    Company communications state 400+ features delivered in 2025; no dated per-release record is
+    published.
+status_page:
+  present: false
+  probed:
+  - url: https://status.lumindigital.com/
+    result: NXDOMAIN
+  - url: https://lumindigital.com/status/
+    result: not present in sitemap
+  note: >-
+    No StatusPage pointer is emitted. status.luminpdf.com and status.luminx.net belong to unrelated
+    companies and are explicitly NOT attributed to Lumin Digital.
+changelog:
+  present: false
+  note: >-
+    No dated changelog or release-notes page exists in https://lumindigital.com/page-sitemap.xml.
+    /insights/ and /news/ are editorial, not release records. No ChangeLog pointer is emitted.
+deprecation:
+  policy_published: false
+  sunset_header_documented: false
+  note: >-
+    No deprecation or sunset policy is published. No Deprecation pointer is emitted.
+versioning:
+  scheme: unknown
+  note: >-
+    No public API reference, so no versioning scheme could be observed. The only versioned Lumin
+    Digital artifact reachable publicly is the @lumindigital/juno CLI, which uses semver (2.7.0,
+    2026-08-20) — that is developer tooling, not the platform API.
+support:
+  channel: https://clients.lumindigital.com/
+  gated: true
+  security_contact: mailto:security-disclosure@lumindigital.com

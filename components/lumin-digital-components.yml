@@ -1,0 +1,29 @@
+generated: '2026-08-25'
+method: searched
+source: https://lumindigital.com/extensibility/
+note: >-
+  Lumin Digital markets a client-side extension surface: the platform SDK lets a financial
+  institution inject its own UI into the digital banking experience. The component families below are
+  named on the public extensibility page. NONE of them are publicly distributed — there is no npm
+  package, no CDN loader, no public element reference; the SDK and its design assets are delivered to
+  licensed institutions and ecosystem partners under
+  https://lumindigital.com/software-development-kit-license-agreement/ via the authenticated client
+  portal. No loader library, tag name, version or import path is recorded, because none is published.
+distribution: gated (SDK licence + client portal)
+publicly_installable: false
+loader_libraries: []
+component_families:
+- name: Custom navigation components
+  source: https://lumindigital.com/extensibility/
+  description: Institution-authored navigation elements rendered inside digital banking.
+- name: Marketing microservice tiles
+  source: https://lumindigital.com/extensibility/
+  description: Embeddable tiles used to surface products and campaigns in the member experience.
+- name: Design vault assets
+  source: https://lumindigital.com/extensibility/
+  description: A maintained set of brandable design elements for customising platform look and feel.
+- name: Third-party product embeds
+  source: https://lumindigital.com/ecosystem/
+  description: >-
+    Ecosystem partner products (a stated 200+ integrations available or in development) surfaced
+    inside digital banking so members and admins do not exit the platform.

@@ -1,0 +1,63 @@
+generated: '2026-08-25'
+method: probed
+source: live GET of /.well-known/* on every Lumin Digital host reachable without credentials
+note: >-
+  One real hit: lumindigital.com serves an RFC 9116 security.txt (HTTP 200, text/plain, 331 bytes)
+  naming a disclosure mailbox and a policy page, saved verbatim as lumin-digital-security.txt.
+  Everything else 404s. api.demo.lumindigital.com is a live host (DNS resolves, TLS terminates) but
+  answers 404 with a zero-byte body on every /.well-known/ path. clients.lumindigital.com answers 302
+  to /login for every path, including /.well-known/*, which is the authenticated client portal gate
+  rather than an absence. The 404s on lumindigital.com return the WordPress 404 template (~92KB of
+  HTML) with a correct 404 status code, so they are true negatives, not soft-404s.
+hit_count: 1
+hosts:
+- host: https://lumindigital.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: lumin-digital-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://api.demo.lumindigital.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://clients.lumindigital.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 302
+    note: redirects to /login?ReturnUrl= — authenticated client portal, not a served document
+  - path: /.well-known/openid-configuration
+    status: 302
+  - path: /.well-known/oauth-authorization-server
+    status: 302
+  - path: /.well-known/oauth-protected-resource
+    status: 302
+  - path: /.well-known/api-catalog
+    status: 302
+  - path: /.well-known/agent-card.json
+    status: 302
+  - path: /.well-known/agent.json
+    status: 302

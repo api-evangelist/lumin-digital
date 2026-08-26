@@ -1,0 +1,23 @@
+generated: '2026-08-25'
+method: searched
+source: https://lumindigital.com/
+note: >-
+  Lumin Digital publishes NO pricing. There is no /pricing page in
+  https://lumindigital.com/page-sitemap.xml (31 pages, checked 2026-08-25), no plan tiers, no rate
+  card and no published unit of billing. The company sells enterprise digital banking platform
+  contracts to credit unions and community banks through a sales motion — every third-party listing
+  (G2, Capterra) records pricing as "Contact Us" / quote-based. No Pricing pointer is emitted in
+  apis.yml because there is no pricing page to point at; adding one to the homepage would be a false
+  claim on the provider's behalf.
+plan_count: 0
+pricing_model: enterprise-contract
+publicly_priced: false
+self_serve_signup: false
+plans: []
+evidence:
+- url: https://lumindigital.com/page-sitemap.xml
+  status: 200
+  finding: no /pricing/ or /plans/ page present
+- url: https://lumindigital.com/
+  status: 200
+  finding: navigation offers "Request a demo" / contact, no pricing link

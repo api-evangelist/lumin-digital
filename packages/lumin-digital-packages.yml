@@ -1,0 +1,47 @@
+generated: '2026-08-25'
+method: searched
+source: >-
+  registry.npmjs.org, pypi.org, rubygems.org, crates.io, api.nuget.org, search.maven.org and the
+  github.com/lumindigital organisation
+note: >-
+  Lumin Digital publishes ONE first-party package to a public registry, and it is not a client
+  library for the digital banking platform. @lumindigital/juno is an internal-tooling CLI that
+  generates Argo Workflows from TypeScript; its own README states it is "un-official" with respect to
+  the Argo project. It is recorded here because it is genuinely first-party (published under the
+  company's own npm scope, source in github.com/lumindigital), and because its release cadence is the
+  only publicly-dated engineering signal the company emits. NO official SDK for the Lumin Digital
+  platform API is published to any public registry: the platform SDK is distributed to financial
+  institutions and ecosystem partners under the SDK licence agreement at
+  https://lumindigital.com/software-development-kit-license-agreement/ through the authenticated
+  client portal, so it has no registry metadata endpoint to read. Because no public client library
+  exists, NO `SDKs` pointer is emitted in apis.yml — a `Packages` pointer only.
+sdk_for_platform_api: false
+packages:
+- language: javascript
+  registry: npm
+  name: "@lumindigital/juno"
+  url: https://www.npmjs.com/package/@lumindigital/juno
+  source: https://github.com/lumindigital/juno
+  install: npm install -g @lumindigital/juno
+  official: true
+  license: MIT
+  version: 2.7.0
+  published: '2026-08-20'
+  first_published: '2025-10-21'
+  release_count: 15
+  kind: cli
+  scope: >-
+    Developer tooling — a typed TypeScript DSL and oclif CLI for authoring Argo Workflows. Not a
+    client for the Lumin Digital banking API.
+absent:
+- registry: pypi
+  probed:
+  - lumin-digital
+  - lumindigital
+  status: 404
+- registry: npm
+  probed:
+  - "@lumindigital/sdk"
+  - lumin-digital-sdk
+  - lumin-sdk
+  status: 404

@@ -1,0 +1,92 @@
+generated: '2026-08-25'
+method: searched
+source: https://lumindigital.com/security/
+note: >-
+  Compliance posture read verbatim from the public security page. Lumin Digital states: "We exceed
+  industry standards with SOC 2 Trust Services Criteria, PCI Data Security Standard, and GLBA-aligned
+  security frameworks, all transparently documented in our client-accessible GRC platform." The GRC
+  platform is the TrustShare-hosted trust centre at trust.lumindigital.com, which is client-accessible
+  — the report artifacts themselves are not public. Nothing is asserted here beyond what the provider
+  publishes; no certificate numbers, audit dates, or auditor names are stated publicly, so none are
+  recorded.
+standards:
+- id: soc2
+  name: SOC 2 Trust Services Criteria
+  conforms: true
+  evidence:
+    type: provider-claim
+    url: https://lumindigital.com/security/
+    quote: >-
+      We exceed industry standards with SOC 2 Trust Services Criteria, PCI Data Security Standard,
+      and GLBA-aligned security frameworks
+    report_public: false
+    report_access: client-accessible GRC platform (trust.lumindigital.com)
+- id: pci-dss
+  name: PCI Data Security Standard
+  conforms: true
+  evidence:
+    type: provider-claim
+    url: https://lumindigital.com/security/
+    report_public: false
+- id: glba
+  name: Gramm-Leach-Bliley Act safeguards
+  conforms: partial
+  evidence:
+    type: provider-claim
+    url: https://lumindigital.com/security/
+    quote: GLBA-aligned security frameworks
+    note: >-
+      Stated as "GLBA-aligned", not as a certification. GLBA is the governing US regime for a digital
+      banking platform serving credit unions and community banks.
+- id: rfc9116
+  name: RFC 9116 security.txt
+  conforms: true
+  evidence:
+    type: probed
+    url: https://lumindigital.com/.well-known/security.txt
+    status: 200
+    file: well-known/lumin-digital-security.txt
+- id: dmarc
+  name: DMARC enforcement
+  conforms: true
+  evidence:
+    type: probed
+    source: security/lumin-digital-domain-security.yml
+    detail: p=reject on lumindigital.com
+- id: dnssec
+  name: DNSSEC
+  conforms: true
+  evidence:
+    type: probed
+    source: security/lumin-digital-domain-security.yml
+- id: wcag
+  name: WCAG / accessibility statement
+  conforms: true
+  evidence:
+    type: searched
+    url: https://lumindigital.com/accessibility/
+    status: 200
+domain_standards:
+  probed: true
+  found: false
+  note: >-
+    REWARD-ONLY, and not awarded. The domain standards worth probing for a US credit-union digital
+    banking platform — FDX (Financial Data Exchange) for consented data sharing, ISO 20022 message
+    types, NACHA ACH formats, and the CUFX credit-union financial exchange schema — could not be
+    checked against a contract, because Lumin Digital publishes no machine-readable contract
+    publicly. The company markets integrations with Zelle, Fiserv, FIS, Jack Henry, Symitar and
+    Velera (subdomains for those integrations appear in certificate transparency logs for
+    lumindigital.com), which implies the underlying message formats are in use, but an integration
+    partner list is NOT a declared domain-standard conformance and is not recorded as one. Re-probe
+    if a public API reference is ever published.
+  candidates_not_verified:
+  - FDX
+  - ISO 20022
+  - NACHA ACH
+  - CUFX
+unverifiable:
+  reason: no public machine-readable contract
+  detail: >-
+    OpenAPI/AsyncAPI/GraphQL-derived conformance checks (rfc9457 problem details, pagination style,
+    idempotency headers, OAuth 2.0 / OIDC flows, JSON:API) cannot be asserted or denied for this
+    provider. See x-coverage in apis.yml.

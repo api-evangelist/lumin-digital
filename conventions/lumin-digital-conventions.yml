@@ -1,0 +1,66 @@
+generated: '2026-08-25'
+method: searched
+source: https://lumindigital.com/extensibility/
+note: >-
+  This file records what could NOT be established, and why, rather than guessing. Lumin Digital
+  publishes no OpenAPI, AsyncAPI, GraphQL SDL or public API reference (see x-coverage in apis.yml), so
+  every cross-cutting semantic below is `not-public` — meaning the platform certainly has a
+  convention, but no public artifact states it. `not-public` is deliberately distinct from `none`:
+  asserting an absence of idempotency or pagination for an API we cannot read would be a fabrication
+  in the other direction. NOTHING here is inferred from the domain or from peer platforms.
+surfaces:
+  openapi: null
+  graphql: null
+  asyncapi: null
+  public_reference: null
+  gated_reference: https://clients.lumindigital.com/
+auth_style:
+  status: not-public
+  known: >-
+    The extensibility page states that financial institutions and third-party vendors integrate via
+    Lumin Digital APIs and an SDK licensed under
+    https://lumindigital.com/software-development-kit-license-agreement/. No auth scheme, token
+    format, header name or OAuth surface is documented publicly; probes of
+    /.well-known/openid-configuration and /.well-known/oauth-authorization-server on every reachable
+    host returned 404 (or 302 to login on the client portal).
+idempotency:
+  status: not-public
+  header: null
+  note: >-
+    Undetermined. No Idempotency pointer is emitted in apis.yml — emitting one without a documented
+    idempotency key would be false credit on a 9-point agent-readiness dimension.
+pagination:
+  status: not-public
+field_expansion:
+  status: not-public
+metadata:
+  status: not-public
+request_id_tracing:
+  status: not-public
+versioning:
+  status: not-public
+  see: lifecycle/lumin-digital-lifecycle.yml
+error_envelope:
+  status: not-public
+  rfc9457: unknown
+  see: no errors/ artifact — nothing to derive from
+rate_limit_signaling:
+  status: not-public
+  see: rate-limits/lumin-digital-rate-limits.yml
+reversibility:
+  status: not-public
+  grade: unknown
+  read_only: false
+  na: false
+  note: >-
+    Not `na`. Lumin Digital's platform is unambiguously a write surface — the digital banking product
+    moves money (transfers, bill pay, Zelle, deposits) and opens accounts, so reversal operations
+    (payment cancel, transfer reverse, void) certainly exist behind the API. But NO public
+    documentation states which operations are reversible, or the window inside which a reversal
+    works, so no reversal path and no window is recorded. An invented window here is the single error
+    in this pipeline that could cost a user real money, so the honest value is `unknown` and the
+    dimension stays unscored rather than being filled.
+  reversal_operations: []
+  windows: []
+dry_run_mode:
+  status: not-public
