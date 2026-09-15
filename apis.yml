@@ -1,16 +1,15 @@
 aid: lumin-digital
 name: Lumin Digital
-description: >-
-  Lumin Digital is a cloud-native digital banking platform for credit unions and community banks,
-  founded in 2016 by Jeff Chambers and headquartered in San Ramon, California. The platform is built
-  on a single-tenant, microservices architecture and sits on top of an institution's existing core
-  banking processor, delivering retail banking, commercial banking, digital account opening, user
-  engagement, risk management, digital marketing and data analytics as modules. Its extensibility
-  layer is API- and SDK-based: Lumin publishes a client SDK and a partner API programme that connects
-  the platform to a stated 200+ third-party fintech solutions, and a developer portal used by
-  financial institutions and integration partners to move data into and out of digital banking. The
-  API reference, SDK downloads and developer portal are reachable only through the authenticated
-  client portal at clients.lumindigital.com, so no machine-readable contract is published publicly.
+description: 'Lumin Digital is a cloud-native digital banking platform for credit unions and community
+  banks, founded in 2016 by Jeff Chambers and headquartered in San Ramon, California. The platform is
+  built on a single-tenant, microservices architecture and sits on top of an institution''s existing core
+  banking processor, delivering retail banking, commercial banking, digital account opening, user engagement,
+  risk management, digital marketing and data analytics as modules. Its extensibility layer is API- and
+  SDK-based: Lumin publishes a client SDK and a partner API programme that connects the platform to a
+  stated 200+ third-party fintech solutions, and a developer portal used by financial institutions and
+  integration partners to move data into and out of digital banking. The API reference, SDK downloads
+  and developer portal are reachable only through the authenticated client portal at clients.lumindigital.com,
+  so no machine-readable contract is published publicly.'
 url: https://raw.githubusercontent.com/api-evangelist/lumin-digital/refs/heads/main/apis.yml
 deliveryModel:
   model: saas
@@ -66,24 +65,20 @@ tags_raw:
 - Commercial Banking
 - SaaS
 apis:
-- aid: lumin-digital-platform
+- aid: lumin-digital:lumin-digital-platform
   name: Lumin Digital Platform APIs
-  description: >-
-    Lumin Digital's platform API and SDK surface, used by financial institutions and by ecosystem
-    partners to integrate third-party products into the digital banking experience and to move data
-    between the platform, the core processor and third parties. Marketed publicly on the
-    extensibility and ecosystem pages; the reference, spec and SDK artifacts are distributed through
-    the authenticated client portal, and the platform is deployed single-tenant per institution so
-    no single public base URL is published.
+  description: Lumin Digital's platform API and SDK surface, used by financial institutions and by ecosystem
+    partners to integrate third-party products into the digital banking experience and to move data between
+    the platform, the core processor and third parties. Marketed publicly on the extensibility and ecosystem
+    pages; the reference, spec and SDK artifacts are distributed through the authenticated client portal,
+    and the platform is deployed single-tenant per institution so no single public base URL is published.
   humanURL: https://lumindigital.com/extensibility/
-  x-base-url-finding: >-
-    repair-api-bases.py verdict `missing` (2026-08-25). Left missing deliberately rather than guessed.
-    Lumin Digital documents no API base URL anywhere public — the platform is deployed single-tenant
+  x-base-url-finding: repair-api-bases.py verdict `missing` (2026-08-25). Left missing deliberately rather
+    than guessed. Lumin Digital documents no API base URL anywhere public — the platform is deployed single-tenant
     per financial institution, so each client's host differs, and the reference that would name it is
-    behind https://clients.lumindigital.com/login. api.demo.lumindigital.com resolves and terminates
-    TLS but is the demo tenant's app host, answers 404 at root and on every spec path, and is not
-    documented as an API base; recording it as baseURL would assert a contract that was never
-    published.
+    behind https://clients.lumindigital.com/login. api.demo.lumindigital.com resolves and terminates TLS
+    but is the demo tenant's app host, answers 404 at root and on every spec path, and is not documented
+    as an API base; recording it as baseURL would assert a contract that was never published.
   tags:
   - Digital Banking
   - Extensibility
@@ -163,11 +158,10 @@ x-enrichment:
 x-coverage:
   state: gated
   reason: partner-login
-  detail: >-
-    Lumin Digital markets platform APIs, an SDK and a developer portal on lumindigital.com, but every
-    developer path resolves into the client portal at clients.lumindigital.com, which 302s to
-    /login?ReturnUrl= for /docs and for every other path including /.well-known/*, and the 31-page
-    public sitemap contains no developer, API-reference or spec page at all.
+  detail: Lumin Digital markets platform APIs, an SDK and a developer portal on lumindigital.com, but
+    every developer path resolves into the client portal at clients.lumindigital.com, which 302s to /login?ReturnUrl=
+    for /docs and for every other path including /.well-known/*, and the 31-page public sitemap contains
+    no developer, API-reference or spec page at all.
   evidence:
   - url: https://clients.lumindigital.com/docs
     status: 302
