@@ -64,5 +64,104 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Lumin Digital is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/lumin-digital_stock/
+Lumin Digital is a cloud-native digital banking platform for credit unions and community banks, founded in 2016 by Jeff Chambers and headquartered in San Ramon, California. The platform is built on a single-tenant, microservices architecture and sits on top of an institution's existing core banking processor, delivering retail banking, commercial banking, digital account opening, user engagement, risk management, digital marketing and data analytics as modules. Its extensibility layer is API- and SDK-based: Lumin publishes a client SDK and a partner API programme that connects the platform to a stated 200+ third-party fintech solutions, and a developer portal used by financial institutions and integration partners to move data into and out of digital banking. The API reference, SDK downloads and developer portal are reachable only through the authenticated client portal at clients.lumindigital.com, so no machine-readable contract is published publicly.
+
+**Areas:** Digital Banking · Banking · Credit Union · Financial Services · Fintech · Core Banking · Digital Account Opening · Payments · Commercial Banking · Software-as-a-Service
+
+## Lumin Digital on APIs.io
+
+Everything profiled for Lumin Digital is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/lumin-digital/](https://apis.io/providers/lumin-digital/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Lumin Digital Platform APIs](https://apis.io/apis/lumin-digital/lumin-digital-platform/) — Lumin Digital's platform API and SDK surface, used by financial institutions and by ecosystem partners to integrate third-party products into the digital…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Lumin Digital Domain Security](https://apis.io/security/lumin-digital/lumin-digital-domain-security/)
+- [Lumin Digital Trust Center](https://apis.io/security/lumin-digital/lumin-digital-trust-center/)
+- [Lumin Digital Vulnerability Disclosure](https://apis.io/security/lumin-digital/lumin-digital-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Lumin Digital Plans Pricing](https://apis.io/plans/lumin-digital/lumin-digital-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Lumin Digital Rate Limits](https://apis.io/rate-limits/lumin-digital/lumin-digital-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://lumindigital.com/)
+- [Support](https://clients.lumindigital.com/)
+- [Blog](https://lumindigital.com/insights/)
+- [Security](https://lumindigital.com/security/)
+- [Trust centre](https://trust.lumindigital.com/)
+- [Terms of service](https://lumindigital.com/terms-of-use/)
+- [Privacy policy](https://lumindigital.com/privacy-policy/)
+- [GitHub](https://github.com/lumindigital)
+
+## API Evangelist rating
+
+**Kin Score 18.6** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 58.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 35.5 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 19.7** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/lumin-digital/](https://apis.io/providers/lumin-digital/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Lumin Digital: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/lumin-digital/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
